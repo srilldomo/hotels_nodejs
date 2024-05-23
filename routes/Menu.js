@@ -2,6 +2,7 @@ const express = require ("express")
 const router = express.Router()
 const Menu = require("../models/menu")
 
+//this is route
 
 router.post("/", async(req,res)=>{
     try {
@@ -17,7 +18,7 @@ router.post("/", async(req,res)=>{
         
     }
 })
-
+ 
 
 router.get("/data",async(req,res)=>{
     try {
