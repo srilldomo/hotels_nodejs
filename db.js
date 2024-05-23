@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 
-const mongoURL = "mongodb://localhost:27017/Cafe"
+//this will be connect to the localdatabase
+// const mongoURL = "mongodb://localhost:27017/Cafe"
+
+const mongoURL = "mongodb+srv://IgnitorAmateur:aditya.singh@cluster0.yjjujjo.mongodb.net/"
 
 mongoose.connect(mongoURL)
 
