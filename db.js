@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
-
+require("dotenv").config()
 //this will be connect to the localdatabase
 // const mongoURL = "mongodb://localhost:27017/Cafe"
-
-const mongoURL = "mongodb+srv://IgnitorAmateur:aditya.singh@cluster0.yjjujjo.mongodb.net/"
+// const mongoURL = process.env.MongoLocal
+const mongoURL = process.env.DB_URL
 
 mongoose.connect(mongoURL)
 

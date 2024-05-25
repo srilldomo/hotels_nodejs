@@ -20,9 +20,10 @@ router.post("/", async(req,res)=>{
 })
  
 
-router.get("/data",async(req,res)=>{
+router.get("/:id",async(req,res)=>{
     try {
-        const data = await Menu.find({})
+        const body = req.params.id
+        const data = await Menu.findById(body)
             console.log("data saved",data)
             res.status(200).json(data)
         
