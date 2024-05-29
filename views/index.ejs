@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Welcome to my Farzi cafe,what i can help you</h1>
+    <% if (locals.data) { %>
+    <p>Data Added successfully : <%= data %></p>
+    <% } %>
+    <div class="container">
+      <h2>Menu Added</h2>
+      <form action="/menu" method="post">
+        <label>Dishname</label>
+        <input type="text" name="Dishname" placeholder="Dishname" />
+        <label>Price</label>
+        <input type="text" name="price" placeholder="Price" />
+        <label>Taste</label>
+        <input type="text" name="taste" placeholder="Tase" />
+        <button type="submit">Add Menu</button>
+      </form>
+    </div>
+    <div>
+      <% if (locals.menus) { %>
+      <table>
+        <thead>
+            <th>S.no</th>
+          <th>Dishname</th>
+          <th>taste</th>
+          <th>price</th>
+          <th>is_drink</th>
+          <th>ingredients</th>
+        </thead>
+        <tbody>
+             <% menus.forEach((menu,index) => { %>
+                <tr> 
+              <td><%= index+1 %></td>
+              <td><%= menu.Dishname %></td>
+              <td><%= menu.taste %></td>
+              <td><%= menu.price %></td>
+              <td><%= menu.is_drink %></td>
+              <td><%= menu.ingredients %></td>
+            </tr>
+             <% }) %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>

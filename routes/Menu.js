@@ -10,8 +10,8 @@ router.post("/", async(req,res)=>{
         const  menu = new Menu(data)
         const response = await menu.save()
         console.log("Menu saved",response)
-        res.status(200).json(response)
-        
+        res.render("index",{data:response})
+        // res.status(200).json(response) 
     } catch (error) {
         console.log(error)
     res.status(500).json({error:"internal server error"})
@@ -23,8 +23,8 @@ router.post("/", async(req,res)=>{
 router.get("/:id",async(req,res)=>{
     try {
         const body = req.params.id
-        const data = await Menu.findById(body)
-            console.log("data saved",data)
+        `const data = await Menu.findById(body)
+            console.log("data saved",data)`
             res.status(200).json(data)
         
     } catch (error) {

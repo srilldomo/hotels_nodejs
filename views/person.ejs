@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Person Entry</h2>
+    <% if (locals.data) { %>
+    <p>Data Added successfully : <%= data %></p>
+    <% } %>
+    <div>
+      <form action="/person" method="post">
+        <label>name</label>
+        <input type="text" name="name" placeholder="Name" />
+        <label>age</label>
+        <input type="number" name="age" placeholder="Age" />
+        <label>email</label>
+        <input type="text" name="email" placeholder="Email" />
+        <label>address</label>
+        <input type="text" name="address" placeholder="Address" />
+        <label>salary</label>
+        <input type="text" name="salary" placeholder="salary" />
+        <button type="text">Person Added</button>
+      </form>
+      <div>
+        <table>
+          <thead>
+            <th>S.No</th>
+            <th>name</th>
+            <th>age</th>
+            <th>email</th>
+            <th>work</th>
+            <th>address</th>
+            <th>salary</th>
+          </thead>
+          <tbody>
+            <% persons.forEach((data,index )=> { %>
+            <tr>
+              <td><%= index+1 %></td>
+              <td><%= data.name %></td>
+              <td><%= data.age %></td>
+              <td><%= data.email %></td>
+              <td><%= data.work%></td>
+              <td><%= data.address %></td>
+              <td><%= data.salary %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

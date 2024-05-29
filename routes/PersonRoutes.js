@@ -8,7 +8,8 @@ router.post("/",async(req,res)=>{
       const newPerson = new Person(data)
       const response = await newPerson.save()
       console.log("Data saved", response)
-      res.status(200).json(response)
+      res.render("person",{data:response})
+      // res.status(200).json(response)
     } catch (error) { 
       console.log(error)
       res.status(500).json({error:"internal server error"})
@@ -29,7 +30,7 @@ res.status(200).json(data)
 
 router.get("/:worktype",async(req,res)=>{
     try {
-       const worktypes = req.params.worktype
+       const worktypes = req.params.work
    if(worktypes==="manager" || worktypes==="chef" || worktypes==="waiter"){
        const response  = await Person.find({work:worktypes})
        console.log("Data fetched" , response)
