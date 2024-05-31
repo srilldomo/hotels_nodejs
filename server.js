@@ -8,6 +8,7 @@ const path = require("path");
 // const Menu = require("./models/menu");
 const staticRouter = require("./routes/staticRouter");
 const bodyParser = require("body-parser");
+const Userrouter = require("./routes/user")
 
 app.use(bodyParser.json());
 const PORT = process.env.PORT || 4000; 
@@ -29,6 +30,7 @@ app.set("views", path.resolve("./views"));
 //use the router
 app.use("/person", Personrouter);
 app.use("/menu", Menurouter);
+app.use("/",Userrouter)
 app.use("/",staticRouter);
 
 app.listen(PORT, () => console.log(`Server started at Port ${PORT}`));

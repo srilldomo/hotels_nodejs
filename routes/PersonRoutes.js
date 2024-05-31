@@ -4,7 +4,7 @@ const Person = require("../models/person")
 
 router.post("/",async(req,res)=>{
     try {
-      const data = req.body
+      const data = req.body 
       const newPerson = new Person(data)
       const response = await newPerson.save()
       console.log("Data saved", response)
@@ -74,5 +74,9 @@ router.get("/:worktype",async(req,res)=>{
       console.log(error)
            res.status(500).json({error:"internal server error"})
     }
+   })
+
+   router.post("/",(req,res)=>{
+    console.log("Hello world this is calling a / and i will counting a number from the server ")
    })
    module.exports = router

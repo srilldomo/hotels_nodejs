@@ -14,4 +14,11 @@ router.get("/person", async(req,res)=>{
 return res.render("person",{persons:allPerson})
 })
 
+router.get("/signup" , (req,res)=>{
+    res.render("signup")
+})
+router.get("/login" , (req,res)=>{
+    res.render("login")
+})
+
 module.exports = router
